@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="nebula"></div>
+    <div class="container">
+        <div id="quiz">
+            <h2 id="question">Pregunta 1: ¿Qué juego saldrá antes?</h2>
+            <div class="options" id="options">
+                <button onclick="checkAnswer(1, 'Hollow Knight Silksong', this)">Hollow Knight Silksong</button>
+                <button onclick="checkAnswer(1, 'Bloodborne PC', this)">Bloodborne PC</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+        </div>
+        <div id="code" class="code">
+            <pre id="hiddenCode">Secreto:</pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

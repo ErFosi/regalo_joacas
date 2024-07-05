@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+}
+
+.nebula {
+    position: fixed;
+    width: 1300px;
+    height: 1300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(0, 31, 63, 0.8), transparent),
+                radial-gradient(circle, rgba(0, 26, 51, 0.7), transparent),
+                radial-gradient(circle, rgba(0, 21, 38, 0.6), transparent);
+    filter: blur(200px);
+    border-radius: 50%;
+    animation: orbit 14s infinite linear;
+    z-index: -1;
+}
+
+.constellations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+.line {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.star:nth-child(1) { top: 20%; left: 30%; }
+.star:nth-child(2) { top: 40%; left: 50%; }
+.star:nth-child(3) { top: 60%; left: 70%; }
+.star:nth-child(4) { top: 80%; left: 30%; }
+.star:nth-child(5) { top: 30%; left: 70%; }
+.star:nth-child(6) { top: 50%; left: 30%; }
+.star:nth-child(7) { top: 70%; left: 50%; }
+.star:nth-child(8) { top: 50%; left: 70%; }
+
+.line:nth-child(1) {
+    width: 200px;
+    height: 2px;
+    top: calc(20% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(30% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(45deg);
+}
+
+.line:nth-child(2) {
+    width: 150px;
+    height: 2px;
+    top: calc(40% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(50% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(30deg);
+}
+
+.line:nth-child(3) {
+    width: 180px;
+    height: 2px;
+    top: calc(60% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(70% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(60deg);
+}
+
+.line:nth-child(4) {
+    width: 160px;
+    height: 2px;
+    top: calc(80% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(30% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(75deg);
+}
+
+.line:nth-child(5) {
+    width: 120px;
+    height: 2px;
+    top: calc(30% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(70% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(15deg);
+}
+
+.line:nth-child(6) {
+    width: 170px;
+    height: 2px;
+    top: calc(50% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(30% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(90deg);
+}
+
+.line:nth-child(7) {
+    width: 130px;
+    height: 2px;
+    top: calc(70% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(50% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(120deg);
+}
+
+.line:nth-child(8) {
+    width: 140px;
+    height: 2px;
+    top: calc(50% - 1px); /* Adjusted top position to center the line on the star */
+    left: calc(70% - 1px); /* Adjusted left position to center the line on the star */
+    transform: rotate(45deg);
+}
+
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateY(-200px); /* Start at center and move up */
+    }
+    25% {
+        transform: translate(-50%, -50%) rotate(90deg) translateX(200px); /* Move 200px to the right while rotating */
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) translateY(200px); /* Move 200px down while rotating */
+    }
+    75% {
+        transform: translate(-50%, -50%) rotate(270deg) translateX(-200px); /* Move 200px to the left while rotating */
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateY(-200px); /* Move 200px up while rotating, back to center */
+    }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+#quiz {
+    margin-bottom: 20px;
+}
+
+.options button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background-color: #004080;
+}
+
+.feedback {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.code {
+    margin-top: 20px;
+    background-color: #00101a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #00ff00;
+}
